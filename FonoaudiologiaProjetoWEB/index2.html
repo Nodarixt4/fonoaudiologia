@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TriCom - Conteúdo</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    .video-card {
+      transition: all 0.3s ease;
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .video-card video {
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+    }
+    .video-card:hover video {
+      filter: brightness(1.05);
+    }
+    .section-header {
+      position: relative;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, #1E3A8A, #FBBF24);
+      border-radius: 3px;
+    }
+    .card-title {
+      background: linear-gradient(to right, #1E3A8A, #2563EB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 600;
+    }
+    .main-title {
+      background: linear-gradient(to right, #1E3A8A, #2563EB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+    .main-title::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 4px;
+      background: linear-gradient(to right, #1E3A8A, #FBBF24);
+      border-radius: 4px;
+    }
+    body {
+      background: linear-gradient(135deg, #BFDBFE 0%, #FEF9C3 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      width: 100%;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body class="text-gray-800 font-inter">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed w-full z-50 py-4 bg-blue-900 bg-opacity-80 backdrop-blur-md">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="imagens/Captura de tela 2025-05-14 175345-Photoroom.png" alt="Logo Univag" class="h-10 w-auto scale-150 transform origin-left object-contain" >
+        <h1 class="text-3xl font-bold text-white">TriCom</h1>
+      </div>
+      <ul class="flex space-x-6">
+        <li><a href="index.html#home" class="text-white hover:text-yellow-300 transition">Home</a></li>
+        <li><a href="index.html#sobre" class="text-white hover:text-yellow-300 transition">Sobre</a></li>
+        <li><a href="index.html#equipe" class="text-white hover:text-yellow-300 transition">Equipe</a></li>
+        <li><a href="index2.html" class="bg-yellow-400 text-blue-900 px-6 py-2 rounded-full font-semibold hover:bg-yellow-300 transition">Conteúdo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="pt-32 pb-20 px-4 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold main-title mb-12 text-center">Conteúdo em Vídeo</h2>
+
+    <!-- Tópico 1 -->
+    <section class="mb-16">
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 section-header">Secção 1</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Vídeo 1 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video1.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Protusão e retração de língua</h4>
+          <p class="text-gray-600 text-sm">Abrir a boca e colocar a língua para fora. Conta com contrações do tipo isôtonica.</p>
+        </div>
+        <!-- Vídeo 2 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video2.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Lateralização de língua da esquerda para a direita</h4>
+          <p class="text-gray-600 text-sm">Abrir a boca, lateralizar a ponta da língua para a comissura labial direita e para esquerda. Conta com contrações do tipo isôtonica.</p>
+        </div>
+        <!-- Vídeo 3 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video3.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Protusão e retração dos lábios (bico-sorriso)</h4>
+          <p class="text-gray-600 text-sm">Fazer um biquinho com os lábios e depois abrir em um sorriso largo, alternando várias vezes. Conta com contrações do tipo isôtonica.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tópico 2 -->
+    <section class="mb-16">
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 section-header">Secção 2</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Vídeo 1 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video4.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Inflar as bochechas</h4>
+          <p class="text-gray-600 text-sm">Encher as bochechas de ar e empurrar o ar de um lado para o outro dentro da boca.</p>
+        </div>
+        <!-- Vídeo 2 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video5.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Abrir e fechar a boca</h4>
+          <p class="text-gray-600 text-sm">Abrir bem a boca e depois fechar, fazer movimentos exagerados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tópico 3 -->
+    <section>
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 section-header">Secção 3</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Bloco com dois vídeos MP4 lado a lado -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <video controls class="w-full h-48">
+              <source src="/videos/video6.mp4" type="video/mp4">
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <video controls class="w-full h-48">
+              <source src="/videos/video7.mp4" type="video/mp4">
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Sucção de língua no palato</h4>
+          <p class="text-gray-600 text-sm">Sugar a língua contra o palato e abrir a boca. Manter 5 segundos. Contração isotônica/isométrica.</p>
+        </div>
+        <!-- Vídeo 2 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video8.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Estalo completo de língua</h4>
+          <p class="text-gray-600 text-sm">Abrir a boca, afastar os lábios e estalar seguidamente a língua inteira contra o palato. Contração isotônica/isométrica.</p>
+        </div>
+        <!-- Vídeo 3 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video9.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Rotação de língua no vestíbulo oral</h4>
+          <p class="text-gray-600 text-sm">Boca fechada, fazer a rotação da língua no vestíbulo oral, contornando os lábios. Repetir os movimentos no sentido horário e anti-horário. Contração isotônica/isométrica.</p>
+        </div>
+        <!-- Vídeo 4 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video10.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Empurrar a ponta da língua na bochecha direita</h4>
+          <p class="text-gray-600 text-sm">Lábios em oclusão, empurrar a bochecha direita com a ponta da língua. Manter 5 segundos. Contração isotônica/isométrica e alongamento do músculo bucinador direito.</p>
+        </div>
+        <!-- Vídeo 5 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video11.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Protusão dos lábios com abertura</h4>
+          <p class="text-gray-600 text-sm">Protruir os lábios abertos mantendo por 5 segundos. Contração isotônica/isométrica.</p>
+        </div>
+        <!-- Vídeo 6 -->
+        <div class="video-card bg-white shadow-lg p-4">
+          <div class="mb-4">
+            <video controls class="w-full h-48">
+              <source src="videos/video12.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
+          <h4 class="text-lg card-title mb-2">Estalo de lábios protuídos</h4>
+          <p class="text-gray-600 text-sm">Protruir os lábios e estalar seguidamente, sem abaixar a mandíbula. Contração isotônica/isométrica.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 TriCom. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
