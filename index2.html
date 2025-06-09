@@ -1,3 +1,4 @@
+<!-- index2.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -78,6 +79,12 @@
       width: 100%;
       margin-top: auto;
     }
+    .video-section {
+      display: none;
+    }
+    .video-section.active {
+      display: block;
+    }
   </style>
 </head>
 <body class="text-gray-800 font-inter">
@@ -93,7 +100,7 @@
         <li><a href="index.html#home" class="text-white hover:text-yellow-300 transition">Home</a></li>
         <li><a href="index.html#sobre" class="text-white hover:text-yellow-300 transition">Sobre</a></li>
         <li><a href="index.html#equipe" class="text-white hover:text-yellow-300 transition">Equipe</a></li>
-        <li><a href="index2.html" class="bg-yellow-400 text-blue-900 px-6 py-2 rounded-full font-semibold hover:bg-yellow-300 transition">Conteúdo</a></li>
+        <li><a href="index2.html#all-sections" class="bg-yellow-400 text-blue-900 px-6 py-2 rounded-full font-semibold hover:bg-yellow-300 transition">Conteúdo</a></li>
       </ul>
     </div>
   </nav>
@@ -103,8 +110,8 @@
     <h2 class="text-4xl font-bold main-title mb-12 text-center">Conteúdo em Vídeo</h2>
 
     <!-- Tópico 1 -->
-    <section class="mb-16">
-      <h3 class="text-2xl font-semibold text-blue-600 mb-6 section-header">Secção 1</h3>
+    <section id="section-mobilidade" class="mb-16 video-section">
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 section-header">Secção 1 - Mobilidade</h3>
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Vídeo 1 -->
         <div class="video-card bg-white shadow-lg p-4">
@@ -143,8 +150,8 @@
     </section>
 
     <!-- Tópico 2 -->
-    <section class="mb-16">
-      <h3 class="text-2xl font-semibold text-blue-600 mb-6 section-header">Secção 2</h3>
+    <section id="section-mastigacao" class="mb-16 video-section">
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 section-header">Secção 2 - Mastigação</h3>
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Vídeo 1 -->
         <div class="video-card bg-white shadow-lg p-4">
@@ -172,10 +179,9 @@
     </section>
 
     <!-- Tópico 3 -->
-    <section>
-      <h3 class="text-2xl font-semibold text-blue-600 mb-6 section-header">Secção 3</h3>
+    <section id="section-tonus" class="video-section">
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 section-header">Secção 3 - Tônus</h3>
       <div class="grid md:grid-cols-3 gap-8">
-        
         <!-- Vídeo 1 -->
          <div class="video-card bg-white shadow-lg p-4">
           <div class="mb-4">
@@ -254,6 +260,44 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script>
+    // JavaScript to handle section visibility based on URL hash
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.video-section');
+      const hash = window.location.hash;
+
+      // Function to show all sections
+      function showAllSections() {
+        sections.forEach(section => {
+          section.classList.add('active');
+        });
+      }
+
+      // Function to show only one section
+      function showSingleSection(targetId) {
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+          setTimeout(() => {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      }
+
+      // Check URL hash and decide what to show
+      if (hash === '#all-sections') {
+        showAllSections();
+      } else if (hash) {
+        showSingleSection(hash);
+      } else {
+        // Default: show the first section
+        sections[0].classList.add('active');
+      }
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
